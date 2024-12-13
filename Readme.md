@@ -1,6 +1,6 @@
 # Puppeteer Web Scraper with Stealth and Proxy Support
 
-This project is a customizable Puppeteer-based web scraper that uses dynamic proxies, random user agents, and stealth techniques to evade detection. The scraper reads proxies and user agents from external files specified in the `.env` file, making it easy to set up and share with other developers.
+This project is a customizable Puppeteer-based web scraper that uses dynamic proxies, random user agents, and stealth techniques to evade detection. The scraper reads proxies and user agents from external files specified in the `.env` file. Or takes in command line arguments.
 
 ## Features
 
@@ -12,37 +12,54 @@ This project is a customizable Puppeteer-based web scraper that uses dynamic pro
 - **Microservice Mode**: Can run as a microservice with an Express.js server.
 - **API Key Authentication**: Uses an API key for authentication in microservice mode.
 
+## Quick Start
+
+Run the scraper with the following command to test it:
+
+```bash
+node app.js --url=https://example.com --output=test.html --delayMin=1 --delayMax=2
+```
+
+- Command-Line Arguments Supported:
+  The following arguments are supported in app.js:
+  - --url: The URL to scrape.
+  - --output: The name of the output file.
+  - --delayMin: The minimum delay in seconds between requests.
+  - --delayMax: The maximum delay in seconds between requests.
+
 ## Project Structure
 
 ```
+
 ├── auth/
-│   └── authMiddleware.js # Authentication middleware
+│ └── authMiddleware.js # Authentication middleware
 ├── config/
-│   └── validateConfig.js # Configuration validation script
+│ └── validateConfig.js # Configuration validation script
 ├── data/
-│   ├── proxies.js # Proxies helper script
-│   └── userAgents.js # User agents helper script
+│ ├── proxies.js # Proxies helper script
+│ └── userAgents.js # User agents helper script
 ├── logger/
-│   └── logger.js # Logging utility
+│ └── logger.js # Logging utility
 ├── modules/
-│   ├── browser.js # Browser setup module
-│   ├── captchaSolver.js # CAPTCHA solver placeholder
-│   ├── navigation.js # Navigation and scraping module
-│   └── scrapeWithRetry.js # Scraping with retry logic
+│ ├── browser.js # Browser setup module
+│ ├── captchaSolver.js # CAPTCHA solver placeholder
+│ ├── navigation.js # Navigation and scraping module
+│ └── scrapeWithRetry.js # Scraping with retry logic
 ├── scrapers/
-│   └── scrapeModule.js # Main scraping module
+│ └── scrapeModule.js # Main scraping module
 ├── storage/
-│   └── scraped_htmls/ # Directory for scraped HTML files
+│ └── scraped_htmls/ # Directory for scraped HTML files
 ├── utils/
-│   ├── captchaDetection.js # CAPTCHA detection utility
-│   ├── delay.js # Delay utility script
-│   └── storage.js # Storage management utility
+│ ├── captchaDetection.js # CAPTCHA detection utility
+│ ├── delay.js # Delay utility script
+│ └── storage.js # Storage management utility
 ├── .env.example # Environment configuration example file
 ├── app.js # Main application script
 ├── package.json # Node.js project file
 ├── proxies.txt # List of proxies
 ├── user-agents.txt # List of user agents
 └── README.md # Project documentation
+
 ```
 
 ## Setup Instructions
@@ -55,10 +72,12 @@ This project is a customizable Puppeteer-based web scraper that uses dynamic pro
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd <repository-directory>
    ```
+
 2. Install dependencies:
    ```bash
    npm install
