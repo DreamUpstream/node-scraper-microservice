@@ -1,0 +1,3 @@
+http://proxyserver1:port,proxyUser1,proxyPass1
+http://proxyserver2:port,proxyUser2,proxyPass2
+http://proxyserver3:port,, # No authentication required
