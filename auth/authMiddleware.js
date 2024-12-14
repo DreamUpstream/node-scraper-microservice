@@ -1,5 +1,8 @@
 const logger = require("../logger/logger");
 
+/**
+ * Middleware to authenticate requests using an API key.
+ */
 function authenticate(req, res, next) {
   const apiKey = req.headers["x-api-key"];
   if (apiKey !== process.env.API_KEY) {

@@ -1,6 +1,6 @@
 # Puppeteer Web Scraper with Stealth and Proxy Support
 
-This project is a customizable Puppeteer-based web scraper that uses dynamic proxies, random user agents, and stealth techniques to evade detection. The scraper reads proxies and user agents from external files specified in the `.env` file. Or takes in command line arguments.
+This project is a customizable Puppeteer-based web scraper that uses dynamic proxies, random user agents, and stealth techniques to evade detection. The scraper reads proxies and user agents from external files specified in the `.env` file or takes in command line arguments.
 
 ## Features
 
@@ -30,36 +30,37 @@ node app.js --url=https://example.com --output=test.html --delayMin=1 --delayMax
 ## Project Structure
 
 ```
-
 ├── auth/
-│ └── authMiddleware.js # Authentication middleware
+│   ├── authMiddleware.js # Authentication middleware
+│   └── ipWhitelistMiddleware.js # IP whitelist middleware
 ├── config/
-│ └── validateConfig.js # Configuration validation script
+│   └── validateConfig.js # Configuration validation script
 ├── data/
-│ ├── proxies.js # Proxies helper script
-│ └── userAgents.js # User agents helper script
+│   ├── proxies.js # Proxies helper script
+│   └── userAgents.js # User agents helper script
 ├── logger/
-│ └── logger.js # Logging utility
+│   └── logger.js # Logging utility
 ├── modules/
-│ ├── browser.js # Browser setup module
-│ ├── captchaSolver.js # CAPTCHA solver placeholder
-│ ├── navigation.js # Navigation and scraping module
-│ └── scrapeWithRetry.js # Scraping with retry logic
+│   ├── browser.js # Browser setup module
+│   ├── captchaSolver.js # CAPTCHA solver placeholder
+│   ├── navigation.js # Navigation and scraping module
+│   ├── scrapeWithRetry.js # Scraping with retry logic
+│   └── scrapeModule.js # Main scraping module
 ├── scrapers/
-│ └── scrapeModule.js # Main scraping module
+│   └── scrapeModule.js # Main scraping module
 ├── storage/
-│ └── scraped_htmls/ # Directory for scraped HTML files
+│   ├── scraped_htmls/ # Directory for scraped HTML files
+│   └── logs/ # Directory for log files
 ├── utils/
-│ ├── captchaDetection.js # CAPTCHA detection utility
-│ ├── delay.js # Delay utility script
-│ └── storage.js # Storage management utility
+│   ├── captchaDetection.js # CAPTCHA detection utility
+│   ├── delay.js # Delay utility script
+│   └── storage.js # Storage management utility
 ├── .env.example # Environment configuration example file
 ├── app.js # Main application script
 ├── package.json # Node.js project file
 ├── proxies.txt # List of proxies
 ├── user-agents.txt # List of user agents
 └── README.md # Project documentation
-
 ```
 
 ## Setup Instructions
