@@ -120,6 +120,15 @@ node app.js --url=https://example.com --output=test.html --delayMin=1 --delayMax
    ```
 3. The scraped content will be returned in the response and saved to the specified output file.
 
+## Will Release/To-Do Later
+
+Future enhancements planned for this project (might) include:
+
+- **Cookie Management**: Support for uploading custom browser cookies to mimic logged-in sessions.
+- **Persistent Browser Sessions**: Ability to reuse browser sessions across multiple scraping runs.
+- **Advanced Fingerprinting**: Improved browser fingerprinting techniques to further enhance stealth and detection evasion.
+- **Dynamic Uploads**: Feature to dynamically upload browser profiles, configurations, or session data (e.g., cookies, user settings).
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
