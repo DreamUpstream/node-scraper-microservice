@@ -8,11 +8,21 @@ const { ipWhitelist } = require("./auth/ipWhitelistMiddleware");
 const Joi = require("joi");
 const rateLimit = require("express-rate-limit");
 const logger = require("./logger/logger");
+const cors = require("cors");
 
 // Validate the configuration before starting the application.
 validateConfig();
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "x-api-key"],
+  })
+);
+
 app.use(express.json());
 app.use(ipWhitelist);
 
