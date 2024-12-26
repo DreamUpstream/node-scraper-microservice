@@ -16,7 +16,11 @@ async function setupBrowser() {
   const browserArgs = proxy ? [`--proxy-server=${proxy.server}`] : [];
   const userAgent = getRandomUserAgent();
 
-  const browser = await puppeteer.launch({ headless: true, args: browserArgs });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env.CHROME_BIN_PATH || null,
+    args: browserArgs,
+  });
   const page = await browser.newPage();
 
   if (proxy && proxy.username && proxy.password) {

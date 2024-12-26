@@ -31,6 +31,7 @@ async function scrape(url, outputFile, delayRange) {
 
     browser = await puppeteer.launch({
       headless: true,
+      executablePath: process.env.CHROME_BIN_PATH || null,
       args: proxyConfig.args || [],
     });
 
