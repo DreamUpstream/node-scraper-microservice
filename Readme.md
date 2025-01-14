@@ -1,4 +1,8 @@
-# Puppeteer Web Scraper with Stealth and Proxy Support
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/13f15a05-44a0-4f55-a53f-e57e6800357c" alt="nsm logo" width="300">
+</p>
+
+# NSM - Puppeteer Web Scraper with Stealth and Proxy Support
 
 This project is a customizable Puppeteer-based web scraper that uses dynamic proxies, random user agents, and stealth techniques to evade detection. The scraper reads proxies and user agents from external files specified in the `.env` file or takes in command line arguments.
 
